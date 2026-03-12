@@ -1,0 +1,41 @@
+[versions]
+
+# plugins
+shadow = "9.3.1"
+
+# general
+lombok = "1.18.42"
+annotations = "26.0.2-1"
+rschem = "v0.0.5"
+
+# testing
+junit = "6.0.2"
+
+# platform api
+purpur = "1.21.11-R0.1-SNAPSHOT"
+
+
+[libraries]
+
+# general
+lombok = { group = "org.projectlombok", name = "lombok", version.ref = "lombok" }
+annotations = { group = "org.jetbrains", name = "annotations", version.ref = "annotations" }
+rschem = { group = "com.github.zVerion", name = "rschem", version.ref = "rschem" }
+
+# junit
+junitApi = { group = "org.junit.jupiter", name = "junit-jupiter-api", version.ref = "junit" }
+junitParams = { group = "org.junit.jupiter", name = "junit-jupiter-params", version.ref = "junit" }
+junitEngine = { group = "org.junit.jupiter", name = "junit-jupiter-engine", version.ref = "junit" }
+junitLauncher = { group = "org.junit.platform", name = "junit-platform-launcher", version.ref = "junit" }
+
+# platform api
+purpur = { group = "org.purpurmc.purpur", name = "purpur-api", version.ref = "purpur" }
+
+[bundles]
+
+junit = ["junitApi", "junitEngine", "junitLauncher", "junitParams"]
+
+
+[plugins]
+
+shadow = { id = "com.gradleup.shadow", version.ref = "shadow" }

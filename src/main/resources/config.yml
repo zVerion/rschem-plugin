@@ -1,0 +1,22 @@
+schematic-directory: schematics
+
+# Compression algorithm for saved .rschem files: ZSTD, GZIP, NONE
+compression: ZSTD
+
+# Number of blocks placed per tick during async paste operations
+paste-batch-size: 200
+
+# Whether to auto-load all .rschem files from the schematics directory on startup
+auto-load: true
+
+# Maximum selection volume (blocks). Prevents accidental huge captures.
+max-selection-volume: 262144   # 64^3
+
+# How long (ticks) port-highlight glass stays visible in debug mode
+debug-highlight-ticks: 200
+
+# Tool item used as the selection wand
+wand-material: GOLDEN_AXE
+
+# Tool item used to place connection ports
+port-tool-material: BLAZE_ROD
