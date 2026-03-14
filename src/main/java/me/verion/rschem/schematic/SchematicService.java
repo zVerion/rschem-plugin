@@ -5,11 +5,9 @@ import me.verion.rschem.*;
 import me.verion.rschem.exception.SchematicLoadException;
 import me.verion.rschem.exception.SchematicWriteException;
 import me.verion.rschem.internal.schematic.SchematicServiceImpl;
-import me.verion.rschem.session.SessionManager;
 import me.verion.rschem.transform.SchematicTransformer;
 import me.verion.rschem.validation.ValidationResult;
 import me.verion.rschem.validation.type.SchematicValidator;
-import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.Contract;
 
 import java.nio.file.Path;
@@ -54,7 +52,7 @@ public interface SchematicService {
    */
   @Contract("_ -> new")
   @NonNull
-  static SchematicService create(@NonNull RschemPlugin pluginMainClass) {
+  static SchematicService create(@NonNull RSchemPlugin pluginMainClass) {
     return new SchematicServiceImpl(pluginMainClass);
   }
 
