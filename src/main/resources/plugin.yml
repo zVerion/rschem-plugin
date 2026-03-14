@@ -1,0 +1,6 @@
+name: rschem
+version: '1.0-SNAPSHOT'
+main: me.verion.rschem.RschemPlugin
+api-version: '1.20'
+authors: [ verion ]
+website: https://github.com/rschem/rschem-plugin
