@@ -19,7 +19,7 @@ import java.util.Optional;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public final class RschemPlugin extends JavaPlugin {
+public final class RSchemPlugin extends JavaPlugin {
 
   private PluginConfiguration configuration;
   private SessionManager sessionManager;
@@ -123,7 +123,7 @@ public final class RschemPlugin extends JavaPlugin {
   /**
    * Immutable snapshot of all user-facing configuration values.
    *
-   * <p> Created once during {@link #onEnable()} via {@link #load(RschemPlugin)}. Invalid or missing values are
+   * <p> Created once during {@link #onEnable()} via {@link #load(RSchemPlugin)}. Invalid or missing values are
    * replaced with sensible defaults and a warning is emitted to the server log.
    *
    * @param directory        absolute path to the schematic storage directory
@@ -147,7 +147,7 @@ public final class RschemPlugin extends JavaPlugin {
      * @param plugin the owning plugin, never {@code null}
      * @return a fully populated {@code PluginConfiguration}, never {@code null}
      */
-    public static @NonNull PluginConfiguration load(@NonNull RschemPlugin plugin) {
+    public static @NonNull PluginConfiguration load(@NonNull RSchemPlugin plugin) {
       Preconditions.checkNotNull(plugin, "plugin must not be null");
 
       var config = plugin.getConfig();

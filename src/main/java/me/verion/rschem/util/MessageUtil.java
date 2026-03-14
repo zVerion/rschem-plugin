@@ -40,7 +40,7 @@ public final class MessageUtil {
    */
   static final Component PREFIX = Component.text()
     .append(Component.text("[", NamedTextColor.DARK_GRAY))
-    .append(Component.text("Rschem", NamedTextColor.GOLD, TextDecoration.BOLD))
+    .append(Component.text("RSchem", NamedTextColor.GOLD, TextDecoration.BOLD))
     .append(Component.text("] ", NamedTextColor.DARK_GRAY))
     .build();
 
