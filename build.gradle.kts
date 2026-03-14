@@ -1,3 +1,5 @@
+import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
+
 plugins {
   id("java")
   alias(libs.plugins.shadow)
@@ -22,6 +24,10 @@ dependencies {
   "implementation"(libs.rschem)
   // testing
   "testImplementation"(libs.bundles.junit)
+}
+
+tasks.withType<ShadowJar> {
+  archiveFileName.set("rschem-plugin.jar")
 }
 
 tasks.withType<JavaCompile> {
