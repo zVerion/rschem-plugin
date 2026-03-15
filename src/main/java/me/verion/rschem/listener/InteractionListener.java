@@ -1,12 +1,11 @@
 package me.verion.rschem.listener;
 
 import lombok.NonNull;
-import me.verion.rschem.RschemPlugin;
+import me.verion.rschem.RSchemPlugin;
 import me.verion.rschem.selection.Selection;
 import me.verion.rschem.session.EditSession;
 import me.verion.rschem.util.BlockVector3;
 import me.verion.rschem.util.MessageUtil;
-import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -26,7 +25,7 @@ import org.jetbrains.annotations.Contract;
  *
  * @since 2.0
  */
-public record InteractionListener(@NonNull RschemPlugin pluginMainClass) implements Listener {
+public record InteractionListener(@NonNull RSchemPlugin pluginMainClass) implements Listener {
 
   /**
    * Creates a new session for the joining player.

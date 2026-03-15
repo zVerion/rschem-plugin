@@ -4,12 +4,10 @@ import lombok.NonNull;
 import me.verion.rschem.*;
 import me.verion.rschem.exception.SchematicLoadException;
 import me.verion.rschem.exception.SchematicWriteException;
-import me.verion.rschem.format.compression.CompressionType;
 import me.verion.rschem.schematic.SchematicService;
 import me.verion.rschem.transform.SchematicTransformer;
 import me.verion.rschem.validation.ValidationResult;
 import me.verion.rschem.validation.type.SchematicValidator;
-import org.bukkit.plugin.Plugin;
 
 import java.nio.file.Path;
 
@@ -26,7 +24,7 @@ public final class SchematicServiceImpl implements SchematicService {
    *
    * @param pluginMainClass the plugin this facade is bound to, not null
    */
-  public SchematicServiceImpl(@NonNull RschemPlugin pluginMainClass) {
+  public SchematicServiceImpl(@NonNull RSchemPlugin pluginMainClass) {
     this.loader = SchematicLoader.create();
     this.writer = SchematicWriter.create(pluginMainClass.configuration().compression());
     this.registry = SchematicRegistry.create(loader);

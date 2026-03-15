@@ -1,10 +1,12 @@
+import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
+
 plugins {
   id("java")
   alias(libs.plugins.shadow)
 }
 
 group = "me.verion.rschem"
-version = "1.0-SNAPSHOT"
+version = "2.0-SNAPSHOT"
 
 repositories {
   mavenCentral()
@@ -22,6 +24,10 @@ dependencies {
   "implementation"(libs.rschem)
   // testing
   "testImplementation"(libs.bundles.junit)
+}
+
+tasks.withType<ShadowJar> {
+  archiveFileName.set("rschem-${project.version}.jar")
 }
 
 tasks.withType<JavaCompile> {
