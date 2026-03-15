@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "me.verion.rschem"
-version = "1.0-SNAPSHOT"
+version = "2.0-SNAPSHOT"
 
 repositories {
   mavenCentral()
@@ -27,7 +27,7 @@ dependencies {
 }
 
 tasks.withType<ShadowJar> {
-  archiveFileName.set("rschem-plugin.jar")
+  archiveFileName.set("rschem-${project.version}.jar")
 }
 
 tasks.withType<JavaCompile> {
