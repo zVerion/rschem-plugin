@@ -1,43 +1,43 @@
-import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
+allprojects {
+  group = "me.verion.rschem"
+  version = "2.0-SNAPSHOT"
 
-plugins {
-  id("java")
-  alias(libs.plugins.shadow)
+  repositories {
+    mavenCentral()
+    maven("https://jitpack.io")
+
+    maven("https://repo.purpurmc.org/snapshots")
+  }
 }
 
-group = "me.verion.rschem"
-version = "2.0-SNAPSHOT"
+subprojects {
+  apply(plugin = "java-library")
 
-repositories {
-  mavenCentral()
-  maven("https://jitpack.io")
-  maven("https://repo.purpurmc.org/snapshots")
-}
+  dependencies {
+    // the 'rootProject.libs.' prefix is needed here - see https://github.com/gradle/gradle/issues/16634
+    // lombok
+    "compileOnly"(rootProject.libs.lombok)
+    "annotationProcessor"(rootProject.libs.lombok)
+    // general
+    "compileOnly"(rootProject.libs.annotations)
+    // testing
+    "testImplementation"(rootProject.libs.bundles.junit)
+  }
 
-dependencies {
-  // lombok
-  "compileOnly"(libs.lombok)
-  "annotationProcessor"(libs.lombok)
-  // general
-  "compileOnly"(libs.annotations)
-  "compileOnly"(libs.purpur)
-  "implementation"(libs.rschem)
-  // testing
-  "testImplementation"(libs.bundles.junit)
-}
+  tasks.withType<JavaCompile> {
+    sourceCompatibility = JavaVersion.VERSION_21.toString()
+    targetCompatibility = JavaVersion.VERSION_21.toString()
+    // options
+    options.encoding = "UTF-8"
+    options.isIncremental = true
+  }
 
-tasks.withType<ShadowJar> {
-  archiveFileName.set("rschem-${project.version}.jar")
-}
+  tasks.getByName<Test>("test") {
+    useJUnitPlatform()
+  }
 
-tasks.withType<JavaCompile> {
-  sourceCompatibility = JavaVersion.VERSION_21.toString()
-  targetCompatibility = JavaVersion.VERSION_21.toString()
-  // options
-  options.encoding = "UTF-8"
-  options.isIncremental = true
-}
-
-tasks.getByName<Test>("test") {
-  useJUnitPlatform()
+  extensions.configure<JavaPluginExtension> {
+    withSourcesJar()
+    withJavadocJar()
+  }
 }
