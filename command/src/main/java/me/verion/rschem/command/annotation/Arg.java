@@ -1,4 +1,4 @@
-package me.verion.rschem.internal.command.annotation;
+package me.verion.rschem.command.annotation;
 
 import lombok.NonNull;
 
@@ -18,7 +18,7 @@ public @interface Arg {
   /**
    * The name of the argument as it appears in the route pattern, without surrounding brackets.
    *
-   * @return the argument name
+   * @return the argument name.
    */
   @NonNull String value();
 }
