@@ -1,4 +1,4 @@
-package me.verion.rschem.util;
+package me.verion.rschem.api.util;
 
 import lombok.NonNull;
 import org.jetbrains.annotations.Contract;

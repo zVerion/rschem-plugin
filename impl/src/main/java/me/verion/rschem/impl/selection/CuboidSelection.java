@@ -1,9 +1,9 @@
-package me.verion.rschem.internal.selection;
+package me.verion.rschem.impl.selection;
 
 import lombok.NonNull;
-import me.verion.rschem.selection.Selection;
-import me.verion.rschem.util.BlockRegion;
-import me.verion.rschem.util.BlockVector3;
+import me.verion.rschem.api.selection.Selection;
+import me.verion.rschem.api.util.BlockRegion;
+import me.verion.rschem.api.util.BlockVector3;
 import org.bukkit.World;
 
 import java.util.Optional;

@@ -1,4 +1,4 @@
-package me.verion.rschem.schematic;
+package me.verion.rschem.api.schematic;
 
 /**
  * Defines the axis or axes along which a schematic or structure is mirrored during placement.
