@@ -1,7 +1,7 @@
-package me.verion.rschem.session;
+package me.verion.rschem.api.session.history;
 
 import lombok.NonNull;
-import me.verion.rschem.util.BlockVector3;
+import me.verion.rschem.api.util.BlockVector3;
 import org.bukkit.World;
 import org.bukkit.block.data.BlockData;
 import org.jetbrains.annotations.Contract;

@@ -1,8 +1,9 @@
-package me.verion.rschem.util;
+package me.verion.rschem.api.util;
 
 import lombok.NonNull;
 import org.bukkit.Location;
 import org.bukkit.World;
+import org.bukkit.util.BlockVector;
 import org.jetbrains.annotations.Contract;
 
 /**
@@ -71,7 +72,6 @@ public record BlockVector3(int x, int y, int z) {
     return of(this.x + other.x(), this.y + other.y(), this.z + other.z());
   }
 
-
   /**
    * Returns a new vector that is the component-wise sum of this vector and the given offsets.
    *
@@ -127,6 +127,16 @@ public record BlockVector3(int x, int y, int z) {
    */
   public @NonNull Location toLocation(@NonNull World world) {
     return new Location(world, this.x, this.y, this.z);
+  }
+
+  /**
+   * Converts this vector to a Bukkit {@link BlockVector}.
+   *
+   * @return a Bukkit {@link BlockVector} with the same coordinates
+   */
+  @Contract(value = "-> new", pure = true)
+  public @NonNull BlockVector toBlockVector() {
+    return new BlockVector(this.x, this.y, this.z);
   }
 
   /**

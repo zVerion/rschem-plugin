@@ -1,4 +1,4 @@
-package me.verion.rschem.schematic;
+package me.verion.rschem.api.schematic;
 
 import lombok.NonNull;
 import org.jetbrains.annotations.Contract;
